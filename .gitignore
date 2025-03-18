@@ -1,0 +1,7 @@
+.editorconfig
+node_modules
+package-lock.json
+tsconfig.app.json
+tsconfig.spec.json
+.idea
+.angular

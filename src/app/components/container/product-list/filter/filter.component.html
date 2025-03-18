@@ -1,0 +1,35 @@
+<div class="filter-section">
+    <div class="filter-label">Filter By Stock:</div>
+
+    <div class="radio-filter-group">
+        <label class="radio-option">
+            <input
+                type="radio"
+                name="stockFilter"
+                value="all"
+                [(ngModel)]="selectedFilter"
+                (change)="onFilterChangeEvent()">
+            <span class="radio-label">All ({{ all }})</span>
+        </label>
+
+        <label class="radio-option">
+            <input
+                type="radio"
+                name="stockFilter"
+                value="inStock"
+                [(ngModel)]="selectedFilter"
+                (change)="onFilterChangeEvent()">
+            <span class="radio-label">In Stock ({{ inStock }})</span>
+        </label>
+
+        <label class="radio-option">
+            <input
+                type="radio"
+                name="stockFilter"
+                value="outOfStock"
+                [(ngModel)]="selectedFilter"
+            (change)="onFilterChangeEvent()">
+            <span class="radio-label">Out of Stock ({{ outStock }})</span>
+        </label>
+    </div>
+</div>

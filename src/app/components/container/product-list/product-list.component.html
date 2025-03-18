@@ -1,0 +1,17 @@
+<app-filter
+    [all]="products.length"
+    [inStock]="getInStockCount()"
+    [outStock]="getOutStockCount()"
+    (onFilterChange)="onFilterChange($event)"
+/>
+
+<div class="product-grid">
+    @for (product of getFilteredProducts(); track $index) {
+        @if (searchText === "" || product.name.toLowerCase().includes(searchText.toLowerCase())) {
+            <app-product (click)="onProductClick(product)" [product]="product"/>
+        }
+    }
+</div>
+
+
+

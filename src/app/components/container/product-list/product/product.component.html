@@ -1,0 +1,72 @@
+<div
+    class="product-card interactive-element--card"
+    interactive-element
+    interactive-variant="card"
+>
+    <!-- Discount Badge -->
+    <div *ngIf="getDiscountPercentage()" class="product-badge discount-badge">
+        <span class="badge-text"
+            >{{ getDiscountPercentage().toFixed(0) }}% OFF</span
+        >
+    </div>
+
+    <!-- Stock Badge -->
+    <div
+        class="product-badge stock-badge"
+        [ngClass]="{
+            'in-stock': product.isInInventory,
+            'out-of-stock': !product.isInInventory
+        }"
+    >
+        <span class="badge-text">{{
+            product.isInInventory ? "In Stock" : "Out of Stock"
+        }}</span>
+    </div>
+
+    <!-- Product Image with Hover Zoom Effect -->
+    <div class="product-image-container">
+        <img
+            [ngSrc]="product.imageUrl"
+            [alt]="product.name"
+            class="product-image"
+            [height]="200"
+            [width]="320"
+            priority
+        />
+    </div>
+
+    <!-- Product Information Section -->
+    <div class="product-info">
+        <div class="product-category">{{ product.category }}</div>
+        <h3 class="product-name">{{ product.name }}</h3>
+        <p class="product-description">{{ product.description }}</p>
+
+        <!-- Price and Add to Cart Section -->
+        <div class="product-bottom">
+            <div class="product-price">
+                <span class="current-price">${{ product.price }}</span>
+                <span *ngIf="getDiscountPercentage()" class="price-old"
+                    >${{ product.oldPrice }}</span
+                >
+            </div>
+
+            <button class="add-to-cart-btn" [disabled]="!product.isInInventory">
+                <svg
+                    class="cart-icon"
+                    fill="none"
+                    height="18"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="18"
+                >
+                    <line x1="12" x2="12" y1="5" y2="19"></line>
+                    <line x1="5" x2="19" y1="12" y2="12"></line>
+                </svg>
+                <span class="btn-text">Add</span>
+            </button>
+        </div>
+    </div>
+</div>

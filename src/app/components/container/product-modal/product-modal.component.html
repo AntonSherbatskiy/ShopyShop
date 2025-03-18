@@ -1,0 +1,167 @@
+@if (product) {
+<!-- Modern Product Modal with Enhanced UI - Now with Gender Support -->
+<div *ngIf="product" class="product-modal-overlay" (click)="closeModal($event)">
+    <div class="product-modal-container" (click)="$event.stopPropagation()">
+        <!-- Close Button -->
+        <button class="modal-close-button" (click)="closeModal()">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="modal-content-wrapper">
+            <!-- Left Column: Product Image and Status Indicators -->
+            <div class="product-image-section">
+                <!-- Discount Badge -->
+                <div
+                    *ngIf="product.discountPrice"
+                    class="product-status-indicator discount-badge"
+                >
+                    <span>{{ product.discountPrice }}% OFF</span>
+                </div>
+
+                <!-- Inventory Status -->
+                <div
+                    class="product-status-indicator inventory-badge"
+                    [ngClass]="
+                        product.isInInventory ? 'in-stock' : 'out-of-stock'
+                    "
+                >
+                    <span>{{
+                        product.isInInventory ? "In Stock" : "Out of Stock"
+                    }}</span>
+                </div>
+
+                <!-- Product Image -->
+                <div class="image-container">
+                    <img
+                        [ngSrc]="product.imageUrl"
+                        priority
+                        alt="{{ product.name }}"
+                        width="500"
+                        height="400"
+                        class="product-image"
+                    />
+                </div>
+            </div>
+
+            <!-- Right Column: Product Details -->
+            <div class="product-details-section">
+                <!-- Product Category and Gender -->
+                <div class="product-metadata">
+                    <div class="product-category-tag">
+                        {{ product.category }}
+                    </div>
+
+                    <!-- Gender Tag - Only shown if gender exists -->
+                    <div
+                        background
+                        color="#ede9fe"
+                        *ngIf="product.gender"
+                        class="product-gender-tag"
+                    >
+                        {{ product.gender }}
+                    </div>
+                </div>
+
+                <!-- Product Name -->
+                <h1 class="product-title">{{ product.name }}</h1>
+
+                <!-- Product Price Information -->
+                <div class="price-container">
+                    <span class="current-price">{{ "$" + product.price }}</span>
+                    <span *ngIf="product.oldPrice" class="original-price">
+                        {{ "$" + product.oldPrice }}
+                    </span>
+                </div>
+
+                <!-- Product Description -->
+                <div class="product-description">
+                    <p>{{ product.description }}</p>
+                </div>
+
+                <!-- Purchase Controls -->
+                <div class="purchase-controls">
+                    <!-- Quantity Selector -->
+                    <div class="quantity-control">
+                        <button class="qty-button" (click)="decreaseQuantity()">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <input
+                            type="text"
+                            [value]="quantity || 0"
+                            class="qty-input"
+                            readonly
+                        />
+                        <button class="qty-button" (click)="increaseQuantity()">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button
+                        [disabled]="!product.isInInventory"
+                        class="add-to-cart-button"
+                        [ngClass]="{ disabled: !product.isInInventory }"
+                    >
+                        <span>Add to Cart</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path
+                                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

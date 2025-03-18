@@ -1,0 +1,37 @@
+<div class="search-container">
+
+    <input
+        [(ngModel)]="searchText"
+        class="search-input"
+        placeholder="Search products..."
+        type="text"
+        (input)="changeSearchText($event)"
+        (keyup.enter)="updateSearchResult(inputElement.value)"
+        #inputElement>
+
+    <div class="search-icon">
+        <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+             stroke-width="2" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+        </svg>
+    </div>
+
+    <button
+        [ngClass]="{'search-button': true, 'search-button-disabled': !searchText}"
+        class="search-button"
+        (click)="updateSearchResult(inputElement.value)"
+        [disabled]="!searchText">
+        Search
+    </button>
+
+</div>
+
+@if (searchResult) {
+    <div
+        class="search-results-text">
+        Search results: {{ searchText }}
+    </div>
+}
+
+
