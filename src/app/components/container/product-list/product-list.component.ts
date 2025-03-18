@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Gender, Product } from "../../../models/product.model";
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from "../../../models/product.model";
+import {HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-product-list',
@@ -9,12 +8,18 @@ import { map } from 'rxjs';
     styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit {
+    public selectedProduct?: Product;
+    @Input() public searchText: string = "";
+    protected products!: Product[];
+    private selectedFilter: string = "all";
+
+    constructor(private client: HttpClient) {
+
+    }
+
     onProductClick(product: Product) {
         console.log(product);
         this.selectedProduct = product;
-    }
-    constructor(private client: HttpClient) {
-
     }
 
     ngOnInit(): void {
@@ -23,13 +28,6 @@ export class ProductListComponent implements OnInit {
                 this.products = data.map(Product.fromJson);
             });
     }
-
-    protected products!: Product[];
-
-    private selectedFilter: string = "all";
-    public selectedProduct?: Product;
-
-    @Input() public searchText: string = "";
 
     protected getInStockCount = (): number => {
         return this.products.filter(p => p.isInInventory).length;

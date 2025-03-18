@@ -16,5 +16,6 @@ export class FilterComponent {
 
     protected onFilterChangeEvent = () => {
         this.onFilterChange.emit(this.selectedFilter);
+
     }
 }

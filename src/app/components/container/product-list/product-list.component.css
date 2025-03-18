@@ -60,7 +60,8 @@
         gap: 20px;
     }
 }
-/* 
+
+/*
 @media (max-width: 480px) {
     .product-grid {
         grid-template-columns: 1fr;

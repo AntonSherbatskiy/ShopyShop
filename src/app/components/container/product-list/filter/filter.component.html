@@ -4,31 +4,31 @@
     <div class="radio-filter-group">
         <label class="radio-option">
             <input
-                type="radio"
-                name="stockFilter"
-                value="all"
+                (change)="onFilterChangeEvent()"
                 [(ngModel)]="selectedFilter"
-                (change)="onFilterChangeEvent()">
+                name="stockFilter"
+                type="radio"
+                value="all">
             <span class="radio-label">All ({{ all }})</span>
         </label>
 
         <label class="radio-option">
             <input
-                type="radio"
-                name="stockFilter"
-                value="inStock"
+                (change)="onFilterChangeEvent()"
                 [(ngModel)]="selectedFilter"
-                (change)="onFilterChangeEvent()">
+                name="stockFilter"
+                type="radio"
+                value="inStock">
             <span class="radio-label">In Stock ({{ inStock }})</span>
         </label>
 
         <label class="radio-option">
             <input
-                type="radio"
-                name="stockFilter"
-                value="outOfStock"
+                (change)="onFilterChangeEvent()"
                 [(ngModel)]="selectedFilter"
-            (change)="onFilterChangeEvent()">
+                name="stockFilter"
+                type="radio"
+                value="outOfStock">
             <span class="radio-label">Out of Stock ({{ outStock }})</span>
         </label>
     </div>

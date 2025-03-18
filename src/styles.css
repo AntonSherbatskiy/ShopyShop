@@ -23,114 +23,114 @@ a {
 /* --- START INTERACTIVE --- */
 
 .interactive-element {
-  /* Ensure smooth transitions for all animated properties */
-  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* Set up initial state for elements */
-  position: relative;
-  cursor: pointer;
-  transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Ensure smooth transitions for all animated properties */
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Set up initial state for elements */
+    position: relative;
+    cursor: pointer;
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Hover state animation for the element */
 .interactive-element:hover {
-  /* Slight upward shift creates a "lifting" effect */
-  transform: translateY(-3px);
-  /* Enhanced shadow adds depth perception */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    /* Slight upward shift creates a "lifting" effect */
+    transform: translateY(-3px);
+    /* Enhanced shadow adds depth perception */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Active/pressed state animation */
 .interactive-element:active {
-  /* Quick depression effect when clicked */
-  transform: translateY(-1px);
-  /* Reduced shadow for pressed appearance */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* Quick depression effect when clicked */
+    transform: translateY(-1px);
+    /* Reduced shadow for pressed appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Focus state for accessibility */
 .interactive-element:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 8px 15px rgba(0, 0, 0, 0.1);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Optional modifier for different animation intensity */
 .interactive-element--subtle {
-  transition-duration: 0.15s;
+    transition-duration: 0.15s;
 }
 
 .interactive-element--subtle:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* More pronounced animation effect */
 .interactive-element--prominent {
-  transition-duration: 0.25s;
+    transition-duration: 0.25s;
 }
 
 .interactive-element--prominent:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Color transition modifier for elements with background colors */
 .interactive-element--color-shift {
-  transition-property: transform, box-shadow, background-color, color;
+    transition-property: transform, box-shadow, background-color, color;
 }
 
 /* For primary action buttons (like your Add to Cart) */
 .interactive-element--primary {
-  background-color: #3b82f6;
-  color: white;
+    background-color: #3b82f6;
+    color: white;
 }
 
 .interactive-element--primary:hover {
-  background-color: #2563eb;
-  box-shadow: 0 8px 15px rgba(37, 99, 235, 0.25);
+    background-color: #2563eb;
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.25);
 }
 
 /* For secondary/alternative actions */
 .interactive-element--secondary {
-  background-color: #f3f4f6;
-  color: #1f2937;
+    background-color: #f3f4f6;
+    color: #1f2937;
 }
 
 .interactive-element--secondary:hover {
-  background-color: #e5e7eb;
-  box-shadow: 0 8px 15px rgba(31, 41, 55, 0.1);
+    background-color: #e5e7eb;
+    box-shadow: 0 8px 15px rgba(31, 41, 55, 0.1);
 }
 
 /* For destructive actions like delete */
 .interactive-element--danger {
-  background-color: #ef4444;
-  color: white;
+    background-color: #ef4444;
+    color: white;
 }
 
 .interactive-element--danger:hover {
-  background-color: #dc2626;
-  box-shadow: 0 8px 15px rgba(220, 38, 38, 0.25);
+    background-color: #dc2626;
+    box-shadow: 0 8px 15px rgba(220, 38, 38, 0.25);
 }
 
 /* For product cards specifically */
 .interactive-element--card {
-  border-radius: 8px;
-  overflow: hidden;
-  transition-duration: 0.3s;
+    border-radius: 8px;
+    overflow: hidden;
+    transition-duration: 0.3s;
 }
 
 .interactive-element--card:hover {
-  transform: translateY(-5px) scale(1.02);
+    transform: translateY(-5px) scale(1.02);
 }
 
 /* Disabled state that prevents animations */
 .interactive-element--disabled,
 .interactive-element--disabled:hover,
 .interactive-element--disabled:active {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 /* --- END INTERACTIVE --- */

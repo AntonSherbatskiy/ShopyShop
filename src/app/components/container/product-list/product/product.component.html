@@ -6,31 +6,31 @@
     <!-- Discount Badge -->
     <div *ngIf="getDiscountPercentage()" class="product-badge discount-badge">
         <span class="badge-text"
-            >{{ getDiscountPercentage().toFixed(0) }}% OFF</span
+        >{{ getDiscountPercentage().toFixed(0) }}% OFF</span
         >
     </div>
 
     <!-- Stock Badge -->
     <div
-        class="product-badge stock-badge"
         [ngClass]="{
             'in-stock': product.isInInventory,
             'out-of-stock': !product.isInInventory
         }"
+        class="product-badge stock-badge"
     >
         <span class="badge-text">{{
-            product.isInInventory ? "In Stock" : "Out of Stock"
-        }}</span>
+                product.isInInventory ? "In Stock" : "Out of Stock"
+            }}</span>
     </div>
 
     <!-- Product Image with Hover Zoom Effect -->
     <div class="product-image-container">
         <img
-            [ngSrc]="product.imageUrl"
             [alt]="product.name"
-            class="product-image"
             [height]="200"
+            [ngSrc]="product.imageUrl"
             [width]="320"
+            class="product-image"
             priority
         />
     </div>
@@ -46,11 +46,11 @@
             <div class="product-price">
                 <span class="current-price">${{ product.price }}</span>
                 <span *ngIf="getDiscountPercentage()" class="price-old"
-                    >${{ product.oldPrice }}</span
+                >${{ product.oldPrice }}</span
                 >
             </div>
 
-            <button class="add-to-cart-btn" [disabled]="!product.isInInventory">
+            <button [disabled]="!product.isInInventory" class="add-to-cart-btn">
                 <svg
                     class="cart-icon"
                     fill="none"

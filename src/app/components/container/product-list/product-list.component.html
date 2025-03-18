@@ -1,8 +1,8 @@
 <app-filter
+    (onFilterChange)="onFilterChange($event)"
     [all]="products.length"
     [inStock]="getInStockCount()"
     [outStock]="getOutStockCount()"
-    (onFilterChange)="onFilterChange($event)"
 />
 
 <div class="product-grid">

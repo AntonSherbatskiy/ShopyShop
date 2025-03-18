@@ -47,7 +47,7 @@
     height: 2px;
     background: linear-gradient(90deg, #4a6de5, #6a4ae5);
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     opacity: 0;
 }
 
@@ -71,7 +71,7 @@
     align-items: center;
     position: relative;
     transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .nav-menu a::before {
@@ -118,7 +118,7 @@
     border-radius: 4px;
     box-shadow: 0 4px 10px rgba(74, 109, 229, 0.2);
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .nav-menu li.has-badge:hover::before {
@@ -188,7 +188,7 @@
     letter-spacing: 0.5px;
     justify-content: flex-start;
     transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .dropdown-menu a:hover {

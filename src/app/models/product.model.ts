@@ -21,7 +21,8 @@ export class Product {
             gender = Gender.Men
         } else {
             gender = Gender.Women
-        };
+        }
+        ;
 
         return {
             category: obj.category,
