@@ -19,6 +19,7 @@ import {
 } from './components/container/latest-arrivals/feature-product-card/feature-product-card.component';
 import {BackgroundDirective} from './directives/background.directive';
 import {HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import {HttpClientModule} from '@angular/common/http';
         ProductModalComponent,
         LatestArrivalsComponent,
         FeatureProductCardComponent,
-        BackgroundDirective
+        BackgroundDirective,
+        FooterComponent
     ],
     imports: [
         BrowserModule,

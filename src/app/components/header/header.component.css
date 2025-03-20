@@ -251,3 +251,284 @@
         justify-content: center;
     }
 }
+
+
+/* Add these st
+/* Hide checkbox inputs but use them for toggle functionality */
+.mobile-menu-checkbox,
+.dropdown-checkbox {
+    display: none;
+}
+
+/* Main Navigation */
+.main-nav {
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link,
+.dropdown-label {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.dropdown-label:hover {
+    color: #4a6de5;
+}
+
+.nav-link::after,
+.dropdown-label::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4a6de5, #6a4ae5);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.dropdown-label:hover::after {
+    width: 100%;
+}
+
+.nav-arrow {
+    display: inline-block;
+    margin-left: 5px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    position: relative;
+    top: -2px;
+}
+
+/* Dropdown functionality */
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .nav-arrow {
+    transform: rotate(-135deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+/* Show dropdown on hover for desktop */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(5px);
+    }
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 25px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(74, 109, 229, 0.05);
+    color: #4a6de5;
+    padding-left: 30px;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1002;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #2c3e50;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Apply animations */
+.nav-item {
+    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.nav-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.nav-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* CSS-only scroll effect */
+@media (min-width: 769px) {
+    .header-container:has(~ [style*="scroll-position: sticky"]) {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .main-header {
+        justify-content: space-between;
+    }
+    
+    .main-nav {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+        order: 3;
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 0;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        opacity: 0;
+        z-index: 999;
+    }
+    
+    /* Mobile menu toggle using CSS */
+    .mobile-menu-checkbox:checked ~ .main-nav {
+        max-height: 500px;
+        opacity: 1;
+        padding: 20px;
+    }
+    
+    /* Animate hamburger to X */
+    .mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-checkbox:checked ~ .mobile-menu-btn span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        visibility: visible;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+    
+    /* Mobile dropdown toggle using CSS */
+    .dropdown-checkbox:checked ~ .dropdown-menu {
+        max-height: 300px;
+        padding: 10px 0;
+        opacity: 1;
+    }
+    
+    /* Rotate arrow when dropdown is open */
+    .dropdown-checkbox:checked ~ .dropdown-label .nav-arrow {
+        transform: rotate(-135deg);
+    }
+    
+    .nav-link, 
+    .dropdown-label {
+        justify-content: center;
+    }
+    
+    .dropdown-menu a {
+        padding: 8px 0;
+    }
+    
+    .dropdown-menu a:hover {
+        padding-left: 0;
+    }
+}
