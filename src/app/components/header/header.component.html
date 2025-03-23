@@ -1,112 +1,69 @@
-<header class="header-container">
-    <div class="main-header">
-        <div class="logo">Shopy<span>SHOP</span></div>
-        <input
-            class="mobile-menu-checkbox"
-            id="mobile-menu-toggle"
-            type="checkbox"
-        />
-        <label class="mobile-menu-btn" for="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="main-nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a
-                        [routerLinkActiveOptions]="{exact: true}"
-                        [routerLinkActive]="'active'"
-                        [routerLink]="'home'"
-                        class="nav-link"
-                    >Home</a
-                    >
-                </li>
-                <li class="nav-item dropdown">
-                    <input
-                        class="dropdown-checkbox"
-                        id="shop-dropdown"
-                        type="checkbox"
-                    />
-                    <label class="nav-link dropdown-label" for="shop-dropdown"
-                    >Shop <i class="nav-arrow"></i
-                    ></label>
-                    <div class="dropdown-menu">
-                        <a href="#">All Products</a>
-                        <a href="#">New Arrivals</a>
-                        <a href="#">Best Sellers</a>
-                        <a href="#">Sale</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a
-                        [routerLinkActiveOptions]="{exact: true}"
-                        [routerLinkActive]="'active'"
-                        [routerLink]="'about-us'"
-                        class="nav-link"
-                    >About Us</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a
-                        [routerLinkActiveOptions]="{exact: true}"
-                        [routerLinkActive]="'active'"
-                        [routerLink]="'contact'"
-                        class="nav-link"
-                    >Contact</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a
-                        [routerLinkActiveOptions]="{exact: true}"
-                        [routerLinkActive]="'active'"
-                        [routerLink]="'blog'"
-                        class="nav-link"
-                    >Blog</a
-                    >
-                </li>
-            </ul>
-        </nav>
-        <div class="search-cart">
-            <div class="search-box">
-                <input placeholder="Search for products..." type="text"/>
-                <button>
-                    <svg
-                        fill="none"
-                        height="16"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="cart-icon">
-                <svg
-                    fill="none"
-                    height="20"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-                    ></path>
-                    <line x1="3" x2="21" y1="6" y2="6"></line>
-                    <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
-                <div class="cart-count">3</div>
-            </div>
-        </div>
+<header class="cartoon-header">
+  <div class="header-wrapper">
+    <!-- Logo -->
+    <div class="logo">
+      <span class="logo-text">Shopy</span>
+      <span class="logo-accent">SHOP</span>
     </div>
+    
+    <!-- Mobile Menu Toggle -->
+    <input class="mobile-toggle" type="checkbox" id="mobile-menu-toggle">
+    <label class="mobile-menu-button" for="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    
+    <!-- Navigation -->
+    <nav class="main-navigation">
+      <ul class="nav-items">
+        <li><a href="#" class="active">Home</a></li>
+        
+        <!-- Shop Dropdown -->
+        <li class="dropdown">
+          <input type="checkbox" id="shop-dropdown" class="dropdown-toggle">
+          <label for="shop-dropdown">
+            Shop
+            <svg class="dropdown-arrow" viewBox="0 0 24 24">
+              <path d="M7 10l5 5 5-5"></path>
+            </svg>
+          </label>
+          <ul class="dropdown-menu">
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Utility Section -->
+    <div class="utility-section">
+      <!-- Search -->
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input">
+        <button class="search-button">
+          <svg viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Cart -->
+      <div class="cart-container">
+        <svg class="cart-icon" viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <div class="cart-badge">3</div>
+      </div>
+    </div>
+  </div>
 </header>
