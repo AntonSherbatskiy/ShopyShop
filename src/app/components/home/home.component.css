@@ -1,0 +1,388 @@
+.home-section {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.welcome-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.welcome-subtitle {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}
+
+.banner-decoration {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a6de5, #6a4ae5);
+    margin: 0 auto;
+}
+
+/* About Shop Section */
+.about-shop {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.section-heading {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a6de5, #6a4ae5);
+}
+
+.about-text {
+    font-size: 1.05rem;
+    color: #5d6c7b;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.shop-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.shop-image:hover {
+    transform: scale(1.05);
+}
+
+/* Values Section */
+.values-section {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.values-section .section-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4a6de5, #6a4ae5);
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 50%;
+}
+
+.value-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.value-description {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Shopping Experience */
+.shopping-experience {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.experience-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.experience-content {
+    flex: 1;
+}
+
+.experience-text {
+    font-size: 1.05rem;
+    color: #5d6c7b;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.experience-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #4a6de5, #6a4ae5);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(74, 109, 229, 0.3);
+}
+
+.experience-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(74, 109, 229, 0.4);
+}
+
+/* Testimonials */
+.home-testimonials {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.home-testimonials .section-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonial-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-item {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-quote {
+    font-size: 1rem;
+    color: #5d6c7b;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.testimonial-quote::before {
+    content: '"';
+    font-size: 3rem;
+    color: #4a6de5;
+    position: absolute;
+    top: -20px;
+    left: -5px;
+    opacity: 0.2;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.author-details h4 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin: 0 0 5px;
+}
+
+.author-details p {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* Visit Us Section */
+.visit-section {
+    margin-bottom: 50px;
+}
+
+.location-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.address-hours {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.detail-title {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.detail-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #4a6de5, #6a4ae5);
+}
+
+.detail-text {
+    color: #5d6c7b;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #4a6de5, #6a4ae5);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 109, 229, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .about-shop,
+    .shopping-experience {
+        flex-direction: column;
+    }
+
+    .shopping-experience {
+        flex-direction: column-reverse;
+    }
+
+    .about-image,
+    .experience-image {
+        margin-top: 30px;
+    }
+
+    .address-hours {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-slider {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .location-details {
+        padding: 30px 20px;
+    }
+}

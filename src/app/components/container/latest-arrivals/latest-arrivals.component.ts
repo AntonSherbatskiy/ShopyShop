@@ -6,5 +6,4 @@ import {Component} from '@angular/core';
     styleUrl: './latest-arrivals.component.css'
 })
 export class LatestArrivalsComponent {
-
 }

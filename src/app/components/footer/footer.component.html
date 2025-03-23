@@ -1,6 +1,6 @@
 <script
-    src="https://kit.fontawesome.com/your-code-here.js"
     crossorigin="anonymous"
+    src="https://kit.fontawesome.com/your-code-here.js"
 ></script>
 <footer class="footer-container">
     <div class="main-footer">
@@ -12,7 +12,9 @@
                     <li><a href="#">Team</a></li>
                     <li><a href="#">Career</a></li>
                     <li><a href="#">Press</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a [routerLink]="'blog'" [routerLinkActive]="'active'"
+                           [routerLinkActiveOptions]="{exact: true}">Blog</a>
+                    </li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -33,16 +35,16 @@
                     <li><a href="#">Wholesale Inquiries</a></li>
                 </ul>
                 <div class="social-icons">
-                    <a href="#" class="social-icon">
+                    <a class="social-icon" href="#">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="social-icon">
+                    <a class="social-icon" href="#">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-icon">
+                    <a class="social-icon" href="#">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="social-icon">
+                    <a class="social-icon" href="#">
                         <i class="fab fa-pinterest-p"></i>
                     </a>
                 </div>
@@ -61,7 +63,7 @@
                 </p>
                 <div class="newsletter">
                     <form>
-                        <input type="email" placeholder="Your email address" />
+                        <input placeholder="Your email address" type="email"/>
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>

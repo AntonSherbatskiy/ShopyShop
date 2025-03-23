@@ -22,7 +22,8 @@ export class Product {
         } else {
             gender = Gender.Women
         }
-        ;
+        
+
 
         return {
             category: obj.category,
@@ -30,7 +31,7 @@ export class Product {
             description: obj.description,
             price: obj.price,
             imageUrl: obj.image_url,
-            isInInventory: obj.in_stock === 'true' ? true : false,
+            isInInventory: obj.in_stock === 'true',
             oldPrice: obj.old_price,
             discountPrice: obj.discount_price,
             gender: gender
