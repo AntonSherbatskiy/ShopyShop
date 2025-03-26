@@ -622,7 +622,7 @@
         "price": "3499",
         "old_price": "4999",
         "discount_price": 1500,
-        "category": "Clothes",
+        "category": "Electronics",
         "in_stock": "false"
     },
     {
@@ -633,7 +633,7 @@
         "price": "1319",
         "old_price": "1390",
         "discount_price": 71,
-        "category": "Clothes",
+        "category": "Electronics",
         "in_stock": "true"
     },
     {

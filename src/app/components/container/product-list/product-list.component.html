@@ -1,17 +1,5 @@
-<app-filter
-    (onFilterChange)="onFilterChange($event)"
-    [all]="products.length"
-    [inStock]="getInStockCount()"
-    [outStock]="getOutStockCount()"
-/>
-
 <div class="product-grid">
-    @for (product of getFilteredProducts(); track $index) {
-        @if (searchText === "" || product.name.toLowerCase().includes(searchText.toLowerCase())) {
-            <app-product (click)="onProductClick(product)" [product]="product"/>
-        }
+    @for (product of products; track $index) {
+    <app-product (click)="onProductClick(product)" [product]="product" />
     }
 </div>
-
-
-

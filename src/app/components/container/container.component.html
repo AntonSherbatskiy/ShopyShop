@@ -1,7 +1,16 @@
 <div class="container">
     <h1 class="product-section-title">Our Products</h1>
 
-    <app-search (onSearchResultChange)="updateSearchText($event)" (onSearchTextEmpty)="clearSearchText()"/>
+    <app-search
+        (onSearchResultChange)="updateSearchText($event)"
+        (onSearchTextEmpty)="clearSearchText()"
+    />
+    <app-filter
+        (onFilterChange)="onStockChange($event)"
+        [all]="filteredProducts.length"
+        [inStock]="getInStockCount()"
+        [outStock]="getOutStockCount()"
+    />
 
     <div class="filter-options">
         <div class="sort-by">
@@ -15,24 +24,27 @@
         </div>
         <div class="filter-by">
             <label class="filter-label">Category</label>
-            <select class="filter-select">
-                <option value="all">All Categories</option>
-                <option value="clothing">Clothing</option>
-                <option value="electronics">Electronics</option>
-                <option value="accessories">Accessories</option>
-                <option value="home">Home & Kitchen</option>
+            <select
+                [(ngModel)]="filter.category"
+                (ngModelChange)="onCategoryChange($event)"
+                class="filter-select"
+            >
+                <option [value]="'All'">All Categories</option>
+                <option [value]="'Clothes'">Clothing</option>
+                <option [value]="'Electronics'">Electronics</option>
+                <option [value]="'Accessories'">Accessories</option>
             </select>
         </div>
     </div>
 
-    <app-product-list
-        #productListComponent
-        [searchText]="searchText"/>
+    <app-product-list #productListComponent [products]="filteredProducts" />
 
-    <app-latest-arrivals/>
+    <app-latest-arrivals />
 </div>
 
 @if (productListComponent.selectedProduct) {
-    <app-product-modal (onCloseModalEvent)="productListComponent.selectedProduct = undefined"
-                       [product]="productListComponent.selectedProduct"/>
+<app-product-modal
+    (onCloseModalEvent)="productListComponent.selectedProduct = undefined"
+    [product]="productListComponent.selectedProduct"
+/>
 }

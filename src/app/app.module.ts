@@ -23,11 +23,17 @@ import { BlogComponent } from './components/blog/blog.component';
 import { Route, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NavComponent } from './components/header/nav/nav.component';
+import { FilterService } from './services/filter.service';
 
 const routes: Route[] = [
     {
         path: "",
         component: HomeComponent,
+    },
+    {
+        path: "products",
+        component: ContainerComponent
     },
     {
         path: "home",
@@ -60,7 +66,8 @@ const routes: Route[] = [
         FooterComponent,
         BlogComponent,
         HomeComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        NavComponent
     ],
     imports: [
         BrowserModule,
@@ -69,7 +76,7 @@ const routes: Route[] = [
         HttpClientModule,
         RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })
     ],
-    providers: [],
+    providers: [FilterService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

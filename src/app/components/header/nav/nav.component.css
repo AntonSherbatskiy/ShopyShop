@@ -1,0 +1,29 @@
+li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: all 0.2s ease;
+    padding: 5px 0;
+}
+
+li a:hover {
+    color: #4a6de5;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #4a6de5;
+    transition: width 0.2s ease;
+    border-radius: 3px;
+}
+
+li a:hover::after,
+li a.active::after {
+    width: 100%;
+}
